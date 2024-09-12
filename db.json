@@ -1,0 +1,36 @@
+{
+  "blogs": [
+    {
+      "id": "29e6",
+      "title": "Alps in Nature",
+      "description": "Discover the breathtaking beauty of the Alps with our travel guide, featuring stunning landscapes and thrilling activities. Whether you're skiing or hiking, the Alps offer something for every adventurer.",
+      "category": "Travel",
+      "imageUrl": "http://res.cloudinary.com/deklejcrt/image/upload/v1725981183/jjhst2rxlnnsnkposgce.jpg",
+      "date": "11/10/2024"
+    },
+    {
+      "id": "345d",
+      "title": "Music Albums",
+      "description": "Discover the best albums that have dropped this year, featuring a mix of genres and artists. Dive into the music that is making waves in the industry and shaping the sound of 2023.",
+      "category": "Music",
+      "imageUrl": "http://res.cloudinary.com/deklejcrt/image/upload/v1725991997/ynfhiiuvveqcdhbuuz0a.jpg",
+      "date": "11/10/2024"
+    },
+    {
+      "id": "6e35",
+      "title": "Future with AI",
+      "description": "Explore the advancements and future potential of artificial intelligence, including its applications in various industries. Understand how AI is transforming our daily lives and what it means for the future.",
+      "category": "Technology",
+      "imageUrl": "http://res.cloudinary.com/deklejcrt/image/upload/v1726146715/tsskdfesbqgmuczdtyal.jpg",
+      "date": "13/12/2024"
+    },
+    {
+      "id": "d3f9",
+      "title": "Cybersecurity Today",
+      "description": "Understanding the importance of cybersecurity in today's digital world is crucial. Learn how to protect yourself and your data from online threats and attacks that are becoming increasingly sophisticated.",
+      "category": "Technology",
+      "imageUrl": "http://res.cloudinary.com/deklejcrt/image/upload/v1726146795/bsvrgulrxka7shnrzvkk.jpg",
+      "date": "13/12/2024"
+    }
+  ]
+}
