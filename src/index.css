@@ -13,6 +13,7 @@ code {
     monospace;
 }
 
+
 /* styles.css */
 .form-container {
   max-width: 600px;
@@ -79,6 +80,14 @@ h6:after {
   margin-right: -50%;
 }
 
+/*Style for the search area*/
+.searchForm {
+  margin: auto;
+  padding: 15px;
+  max-width: 550px;
+  align-content: center;
+}
+
 /* Styles For Error Messages */
 .titleErrorMsg {
   color: red;
@@ -102,6 +111,13 @@ h6:after {
   color: red;
   text-align: left;
   font-size: 14px;
+}
+
+/*Styles for the latest blogs*/
+.latest-title {
+  color: black;
+  font-weight: 600;
+  font-family: monospace;
 }
 
 /*Stles for the buttons*/

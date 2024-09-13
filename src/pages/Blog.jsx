@@ -93,7 +93,9 @@ const Blog = () => {
       </div>
       {relatedPost && relatedPost.length > 0 && (
         <>
-          <h6>Related Posts</h6>
+          {relatedPost.length > 1 && (
+            <h6>Related Posts</h6>
+          )}
           <MDBRow className='"row-cols-1 row-cols-md-3 g-4'>
             {relatedPost.filter((item) => item.id !== id).map((item, index) => (
               <MDBCol>

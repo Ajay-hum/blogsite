@@ -31,6 +31,14 @@
       "category": "Technology",
       "imageUrl": "http://res.cloudinary.com/deklejcrt/image/upload/v1726146795/bsvrgulrxka7shnrzvkk.jpg",
       "date": "13/12/2024"
+    },
+    {
+      "id": "224f",
+      "title": "Tech Gadgets",
+      "description": "Check out the must-have gadgets for this year, from smart home devices to innovative wearables. Stay updated with the latest technology trends that are making life easier and more connected.",
+      "category": "Technology",
+      "imageUrl": "http://res.cloudinary.com/deklejcrt/image/upload/v1726148106/ruqjejph7h2v2h2f5ztc.jpg",
+      "date": "13/12/2024"
     }
   ]
 }

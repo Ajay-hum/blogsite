@@ -5,7 +5,7 @@ import AddEditBlog from './pages/AddEditBlog';
 import Blog from './pages/Blog';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
-import Categories from './pages/Categories';
+import Categories from './components/Categories';
 import Contact from './pages/Contact';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
