@@ -2,7 +2,7 @@
   "name": "chatter-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ajay-hum.github.io/blogsite/",
+  "homepage": "",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 3000",
-    "predeploy": "node build-gh-pages.js && npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

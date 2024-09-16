@@ -64,24 +64,22 @@ const Blog = () => {
         src={blog && blog.imageUrl}
         className='img-fluid rounded'
         alt={blog && blog.imageUrl}
-        style={{width: "100%", maxHeight: "600px"}}
+        style={{width: "70rem", maxHeight: "450px", marginTop: "50px"}}
       />
       <MDBTypography 
         tag="h2" 
         className='text-muted mt-2' 
-        style={{display: "inline-block"}}
+        style={{display: "inline-block", color: 'Black'}}
       >
         {blog && blog.title}
       </MDBTypography>
-      <div style={{marginTop: "20px"}}>
+      <div style={{marginTop: "20px", color: 'Black'}}>
         <div style={{height: "43px", background: "#f6f6f6"}}>
-          <MDBIcon
-          style={{float: "left"}}
-          className='mt-3'
-          far
-          icon="calendar-alt"
-          size="lg"
-          />
+          <strong
+            style={{float: "left", marginTop: "12px"}}
+          >
+            Blog Updated on: 
+          </strong>
           <strong style={{float: "left", marginTop: "12px", marginLeft: "2px"}}>
             {blog && blog.date}
           </strong>
@@ -94,7 +92,7 @@ const Blog = () => {
       {relatedPost && relatedPost.length > 0 && (
         <>
           {relatedPost.length > 1 && (
-            <h6>Related Posts</h6>
+            <h6 style={{marginTop: "50px"}}>Related Posts</h6>
           )}
           <MDBRow className='"row-cols-1 row-cols-md-3 g-4'>
             {relatedPost.filter((item) => item.id !== id).map((item, index) => (
@@ -105,11 +103,12 @@ const Blog = () => {
                       src={item.imageUrl}
                       alt={item.title}
                       position="top"
+                      style={{width: "15rem", maxHeight: "45rem", marginTop: "50px"}}
                     />
                   </Link>
                   <MDBCardBody>
-                    <MDBCardTitle>{item.title}</MDBCardTitle>
-                    <MDBCardText>{excerpt(item.description)}</MDBCardText>
+                    <MDBCardTitle style={{ color: 'Black'}}>{item.title}</MDBCardTitle>
+                    <MDBCardText style={{ color: 'Black'}}>{excerpt(item.description)}</MDBCardText>
                   </MDBCardBody>
                 </MDBCard>
               </MDBCol>

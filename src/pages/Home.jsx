@@ -4,30 +4,44 @@ import { toast } from "react-toastify";
 import { MDBRow, MDBCol, MDBContainer, MDBTypography, MDBBtn } from "mdb-react-ui-kit";
 import Blogs from '../components/Blogs';
 import Search from '../components/Search';
-import Categories from '../components/Categories'; // Import the Categories component
+import Categories from '../components/Categories';
 import LatestBlog from '../components/LatestBlog';
+import Pagination from '../components/Pagination';
+
+// import image from '../../Pages/image_use.jpg'
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [latestBlog, setLatestBlog] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState(""); // State for selected category
+  const [selectedCategory, setSelectedCategory] = useState(""); // Initialize with empty string for "All"
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalBlog, setTotalBlog] = useState(null);
+  const [pageLimit] = useState(5);
+
   const categories = [ 'Travel', 'Fashion', 'Technology', 'Food', 'Music' ]; // Example categories
 
   useEffect(() => {
-    loadBlogsData();
+    loadBlogsData(0, 5, 0);
     fetchLatestBlog();
   }, [selectedCategory]); // Reload data when category changes
 
-  const loadBlogsData = async () => {
+  const loadBlogsData = async (start, end, increase, operation) => {
     try {
-      const response = await axios.get("http://localhost:3000/blogs");
+      const totalBlog = await axios.get("http://localhost:3000/blogs");
+      setTotalBlog(totalBlog.data.length);
+      const response = await axios.get(`http://localhost:3000/blogs?_start=${start}&_end=${end}`);
       if (response.status === 200) {
         const filteredData = selectedCategory
           ? response.data.filter(blog => blog.category === selectedCategory) // Filter based on selected category
           : response.data;
 
         setData(filteredData);
+        if (operation) {
+          setCurrentPage(0)
+        } else {
+          setCurrentPage(currentPage + increase)
+        }
       } else {
         toast.error("Something went wrong");
       }
@@ -46,7 +60,7 @@ const Home = () => {
     } else {
       toast.error("Something went wrong")
     }
-  }
+  };
 
   const handleCategory = (category) => {
     setSelectedCategory(category); // Update the selected category
@@ -57,7 +71,7 @@ const Home = () => {
       const response = await axios.delete(`http://localhost:3000/blogs/${id}`);
       if (response.status === 200) {
         toast.success("Blog Deleted Successfully");
-        loadBlogsData();
+        loadBlogsData(0, 5, 0, "delete");
       } else {
         toast.error("Something went wrong");
       }
@@ -138,6 +152,15 @@ const Home = () => {
           ))}
         </MDBCol>
       </MDBRow>
+      <div className="mt-3">
+        <Pagination 
+          currentPage={currentPage} 
+          loadBlogsData={loadBlogsData}
+          pageLimit={pageLimit}
+          data={data}
+          totalBlog={totalBlog}
+        />
+      </div>
     </>
   );
 };
