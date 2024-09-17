@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes, BrowserRouter, Route} from 'react-router-dom'
+import {Routes, BrowserRouter as Router, Route} from 'react-router-dom'
 import Home from './pages/Home';
 import AddEditBlog from './pages/AddEditBlog';
 import Blog from './pages/Blog';
@@ -13,7 +13,7 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-  <BrowserRouter>
+  <Router>
   <div className="App">
     <Navbar />
     <ToastContainer/>
@@ -28,7 +28,7 @@ function App() {
       <Route path="*" element={<NotFound/>}/>
     </Routes>
   </div>
-  </BrowserRouter>
+  </Router>
   );
 }
 
